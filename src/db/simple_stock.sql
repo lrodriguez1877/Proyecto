@@ -6,7 +6,7 @@
 -- Tiempo de generación: 20-12-2016 a las 11:38:12
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
-
+/*
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -26,6 +26,8 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `categorias`
 --
 
+USE `proyecto2`;
+
 CREATE TABLE IF NOT EXISTS `categorias` (
   `id_categoria` int(11) NOT NULL,
   `nombre_categoria` varchar(255) NOT NULL,
@@ -36,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `categorias` (
 --
 -- Volcado de datos para la tabla `categorias`
 --
-
+--
 INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `descripcion_categoria`, `date_added`) VALUES
 (1, 'Repuestos', 'Equipos para el hogar', '2016-12-19 00:00:00'),
 (4, 'Equipos', 'Equipos stihl', '2016-12-19 21:06:37'),
@@ -79,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 -- Estructura de tabla para la tabla `users`
 --
-
+/*
 CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(11) NOT NULL COMMENT 'auto incrementing user_id of each user, unique index',
   `firstname` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -96,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `user_name`, `user_password_hash`, `user_email`, `date_added`) VALUES
 (1, 'Obed', 'Alvarado', 'admin', '$2y$10$MPVHzZ2ZPOWmtUUGCq3RXu31OTB.jo7M9LZ7PmPQYmgETSNn19ejO', 'admin@admin.com', '2016-12-19 15:06:00');
-
+*/
 --
 -- Índices para tablas volcadas
 --
@@ -124,11 +126,12 @@ ALTER TABLE `products`
 --
 -- Indices de la tabla `users`
 --
+/*
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `user_name` (`user_name`),
   ADD UNIQUE KEY `user_email` (`user_email`);
-
+*/
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
@@ -151,8 +154,10 @@ ALTER TABLE `products`
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
+/*
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index',AUTO_INCREMENT=2;
+*/
 --
 -- Restricciones para tablas volcadas
 --
