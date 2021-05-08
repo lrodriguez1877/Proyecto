@@ -95,7 +95,7 @@ function eliminar (id){
 		var id_categoria= $("#id_categoria").val();
 		$.ajax({
 			type: "GET",
-			url: "./ajax/buscar_productos.php",
+			url: "../src/ajax/buscar_productos.php",
 			data: "id="+id,"q":q+"id_categoria="+id_categoria,
 			 beforeSend: function(objeto){
 				$("#resultados").html("Mensaje: Cargando...");

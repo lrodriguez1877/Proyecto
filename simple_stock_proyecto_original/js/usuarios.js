@@ -6,9 +6,9 @@
 			var q= $("#q").val();
 			$("#loader").fadeIn('slow');
 			$.ajax({
-				url:'./ajax/buscar_usuarios.php?action=ajax&page='+page+'&q='+q,
+				url:'../src/ajax/buscar_usuarios.php?action=ajax&page='+page+'&q='+q,
 				 beforeSend: function(objeto){
-				 $('#loader').html('<img src="./img/ajax-loader.gif"> Cargando...');
+				 $('#loader').html('<img src="../public/assets/img/ajax-loader.gif"> Cargando...');
 			  },
 				success:function(data){
 					$(".outer_div").html(data).fadeIn('slow');
@@ -26,7 +26,7 @@
 		if (confirm("Realmente deseas eliminar el usuario")){	
 		$.ajax({
         type: "GET",
-        url: "./ajax/buscar_usuarios.php",
+        url: "../src/ajax/buscar_usuarios.php",
         data: "id="+id,"q":q,
 		 beforeSend: function(objeto){
 			$("#resultados").html("Mensaje: Cargando...");

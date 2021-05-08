@@ -1,14 +1,8 @@
 <?php
 
-	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
-	---------------------------*/
-	/* Connect To Database*/
 	require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 	require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
-	include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
+	include('../src/ajax/is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
 	$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
 	if (isset($_GET['id'])){
 		$id_usuario=intval($_GET['id']);
@@ -17,22 +11,20 @@
 		$count=$rw_user['id_usuario'];
 		if ($id_usuario!=1){
 			if ($delete1=mysqli_query($con,"DELETE FROM usuarios   WHERE id_usuario='".$id_usuario."'")){
-			?>
-			<div class="alert alert-success alert-dismissible" role="alert">
-			  <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			  <strong>Aviso!</strong> Datos eliminados exitosamente.
-			</div>
-			<?php 
-		}else {
-			?>
-			<div class="alert alert-danger alert-dismissible" role="alert">
-			  <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			  <strong>Error!</strong> Lo siento algo ha salido mal intenta nuevamente.
-			</div>
-			<?php
-			
-		}
-			
+				?>
+				<div class="alert alert-success alert-dismissible" role="alert">
+				  <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <strong>Aviso!</strong> Datos eliminados exitosamente.
+				</div>
+				<?php 
+			}else {
+				?>
+				<div class="alert alert-danger alert-dismissible" role="alert">
+				  <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <strong>Error!</strong> Lo siento algo ha salido mal intenta nuevamente.
+				</div>
+				<?php
+			}
 		} else {
 			?>
 			<div class="alert alert-danger alert-dismissible" role="alert">
@@ -49,7 +41,7 @@
 		// escaping, additionally removing everything that could be (html/javascript-) code
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
 		 $aColumns = array('nombre', 'apellido');//Columnas de busqueda
-		 $sTable = "usuarios  ";
+		 $sTable = "usuarios";
 		 $sWhere = "";
 		if ( $_GET['q'] != "" )
 		{
@@ -73,7 +65,7 @@
 		$row= mysqli_fetch_array($count_query);
 		$numrows = $row['numrows'];
 		$total_pages = ceil($numrows/$per_page);
-		$reload = './usuarios.php';
+		$reload = '../public/usuarios.php';
 		//main query to fetch the data
 		$sql="SELECT * FROM  $sTable $sWhere LIMIT $offset,$per_page";
 		$query = mysqli_query($con, $sql);
