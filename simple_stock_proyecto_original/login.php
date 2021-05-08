@@ -9,7 +9,7 @@ if (version_compare(PHP_VERSION, '5.3.7', '<')) {
 }
 
 // include the configs / constants for the database connection
-require_once("config/db.php");
+require_once("../config/db.php");
 
 // load the login class
 require_once("classes/Login.php");
@@ -76,7 +76,7 @@ if ($login->isUserLoggedIn() == true) {
 				}
 				?>
                 <span id="reauth-email" class="reauth-email"></span>
-                <input class="form-control" placeholder="Usuario" name="user_name" type="text" value="" autofocus="" required>
+                <input class="form-control" placeholder="Usuario" name="nombre_usuarios" type="text" value="" autofocus="" required>
                 <input class="form-control" placeholder="Contraseña" name="user_password" type="password" value="" autocomplete="off" required>
                 <button type="submit" class="btn btn-lg btn-success btn-block btn-signin" name="login" id="submit">Iniciar Sesión</button>
             </form><!-- /form -->

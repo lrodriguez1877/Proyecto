@@ -11,29 +11,22 @@
         }
 
 	/* Connect To Database*/
-	require_once ("config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
-	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
+	require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
+	require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
 	
 	$active_productos="active";
 	$title="Inventario | Simple Stock";
-?>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <?php include("head.php");?>
-  </head>
-  <body>
-	<?php
-	include("navbar.php");
+    include("../src/templates/head.php");
+	    include("../src/templates/navbar.php");
 	?>
 	
     <div class="container">
 	<div class="panel panel-success">
 		<div class="panel-heading">
 		    <div class="btn-group pull-right">
-				<button type='button' class="btn btn-success" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Agregar</button>
+				<button type='button' class="btn btn-success" data-bs-toggle="modal" data-bs-target="#nuevoProducto"><span class="bi bi-plus" ></span> Agregar</button>
 			</div>
-			<h4><i class='glyphicon glyphicon-search'></i> Consultar inventario</h4>
+			<h4><i class='bi bi-search'></i> Consultar inventario</h4>
 		</div>
 		<div class="panel-body">
 		
@@ -132,7 +125,7 @@ $( "#guardar_producto" ).submit(function( event ) {
  var parametros = $(this).serialize();
 	 $.ajax({
 			type: "POST",
-			url: "ajax/nuevo_producto.php",
+			url: "../src/ajax/nuevo_producto.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados_ajax_productos").html("Mensaje: Cargando...");

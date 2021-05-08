@@ -11,9 +11,9 @@
         }
 
 	/* Connect To Database*/
-	require_once ("config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
-	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
-	include("funciones.php");
+	require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
+	require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
+	include("../src/funciones.php");
 	
 	$active_productos="active";
 	$active_clientes="";
@@ -24,11 +24,11 @@
 		$quantity=intval($_POST['quantity']);
 		$reference=mysqli_real_escape_string($con,(strip_tags($_POST["reference"],ENT_QUOTES)));
 		$id_producto=intval($_GET['id']);
-		$user_id=$_SESSION['user_id'];
-		$firstname=$_SESSION['firstname'];
-		$nota="$firstname agregó $quantity producto(s) al inventario";
+		$id_usuario=$_SESSION['id_usuario'];
+		$nombre=$_SESSION['nombre'];
+		$nota="$nombre agregó $quantity producto(s) al inventario";
 		$fecha=date("Y-m-d H:i:s");
-		guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity);
+		guardar_historial($id_producto,$id_usuario,$fecha,$nota,$reference,$quantity);
 		$update=agregar_stock($id_producto,$quantity);
 		if ($update==1){
 			$message=1;
@@ -41,11 +41,11 @@
 		$quantity=intval($_POST['quantity_remove']);
 		$reference=mysqli_real_escape_string($con,(strip_tags($_POST["reference_remove"],ENT_QUOTES)));
 		$id_producto=intval($_GET['id']);
-		$user_id=$_SESSION['user_id'];
-		$firstname=$_SESSION['firstname'];
-		$nota="$firstname eliminó $quantity producto(s) del inventario";
+		$id_usuario=$_SESSION['id_usuario'];
+		$nombre=$_SESSION['nombre'];
+		$nota="$nombre eliminó $quantity producto(s) del inventario";
 		$fecha=date("Y-m-d H:i:s");
-		guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity);
+		guardar_historial($id_producto,$id_usuario,$fecha,$nota,$reference,$quantity);
 		$update=eliminar_stock($id_producto,$quantity);
 		if ($update==1){
 			$message=1;
@@ -63,15 +63,8 @@
 		die("Producto no existe");
 	}
 	
-?>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <?php include("head.php");?>
-  </head>
-  <body>
-	<?php
-	include("navbar.php");
+    include("../src/templates/head.php");
+	    include("../src/templates/navbar.php");
 	include("modal/agregar_stock.php");
 	include("modal/eliminar_stock.php");
 	include("modal/editar_productos.php");
@@ -88,8 +81,8 @@
               <div class="col-sm-4 col-sm-offset-2 text-center">
 				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
 				  <br>
-                    <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
-					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
+                    <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="bi bi-trash"></i> Eliminar </a> 
+					<a href="#myModal2" data-bs-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="bi bi-pencil"></i> Editar </a>	
 					
               </div>
 			  
@@ -119,10 +112,10 @@
                     <div class="col-sm-12 margin-btm-10">
 					</div>
                     <div class="col-sm-6 col-xs-6 col-md-4 ">
-                      <a href="" data-toggle="modal" data-target="#add-stock"><img width="100px"  src="img/stock-in.png"></a>
+                      <a href="" data-bs-toggle="modal" data-bs-target="#add-stock"><img width="100px"  src="img/stock-in.png"></a>
                     </div>
                     <div class="col-sm-6 col-xs-6 col-md-4">
-                      <a href="" data-toggle="modal" data-target="#remove-stock"><img width="100px"  src="img/stock-out.png"></a>
+                      <a href="" data-bs-toggle="modal" data-bs-target="#remove-stock"><img width="100px"  src="img/stock-out.png"></a>
                     </div>
                     <div class="col-sm-12 margin-btm-10">
                     </div>
@@ -140,7 +133,7 @@
 						if (isset($message)){
 							?>
 						<div class="alert alert-success alert-dismissible" role="alert">
-						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						  <strong>Aviso!</strong> Datos procesados exitosamente.
 						</div>	
 							<?php
@@ -148,7 +141,7 @@
 						if (isset($error)){
 							?>
 						<div class="alert alert-danger alert-dismissible" role="alert">
-						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						  <strong>Error!</strong> No se pudo procesar los datos.
 						</div>	
 							<?php
@@ -208,7 +201,7 @@ $( "#editar_producto" ).submit(function( event ) {
  var parametros = $(this).serialize();
 	 $.ajax({
 			type: "POST",
-			url: "ajax/editar_producto.php",
+			url: "../src/ajax/editar_producto.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados_ajax2").html("Mensaje: Cargando...");

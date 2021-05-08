@@ -47,7 +47,7 @@ $( "#guardar_categoria" ).submit(function( event ) {
  var parametros = $(this).serialize();
 	 $.ajax({
 			type: "POST",
-			url: "ajax/nueva_categoria.php",
+			url: "../src/ajax/nueva_categoria.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados_ajax").html("Mensaje: Cargando...");
@@ -67,7 +67,7 @@ $( "#editar_categoria" ).submit(function( event ) {
  var parametros = $(this).serialize();
 	 $.ajax({
 			type: "POST",
-			url: "ajax/editar_categoria.php",
+			url: "../src/ajax/editar_categoria.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados_ajax2").html("Mensaje: Cargando...");

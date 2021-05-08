@@ -11,8 +11,8 @@
         }
 
 	/* Connect To Database*/
-	require_once ("config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
-	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
+	require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
+	require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
 		$active_usuarios="active";	
 	$title="Usuarios | Simple Stock";
 ?>
@@ -23,15 +23,15 @@
   </head>
   <body>
  	<?php
-	include("navbar.php");
+	    include("../src/templates/navbar.php");
 	?> 
     <div class="container">
 		<div class="panel panel-success">
 		<div class="panel-heading">
 		    <div class="btn-group pull-right">
-				<button type='button' class="btn btn-success" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" ></span> Nuevo Usuario</button>
+				<button type='button' class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal"><span class="bi bi-plus" ></span> Nuevo Usuario</button>
 			</div>
-			<h4><i class='glyphicon glyphicon-search'></i> Buscar Usuarios</h4>
+			<h4><i class='bi bi-search'></i> Buscar Usuarios</h4>
 		</div>			
 			<div class="panel-body">
 			<?php
@@ -51,7 +51,7 @@
 							
 							<div class="col-md-3">
 								<button type="button" class="btn btn-default" onclick='load(1);'>
-									<span class="glyphicon glyphicon-search" ></span> Buscar</button>
+									<span class="bi bi-search" ></span> Buscar</button>
 								<span id="loader"></span>
 							</div>
 							
@@ -86,7 +86,7 @@ $( "#guardar_usuario" ).submit(function( event ) {
  var parametros = $(this).serialize();
 	 $.ajax({
 			type: "POST",
-			url: "ajax/nuevo_usuario.php",
+			url: "../src/ajax/nuevo_usuario.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados_ajax").html("Mensaje: Cargando...");
@@ -106,7 +106,7 @@ $( "#editar_usuario" ).submit(function( event ) {
  var parametros = $(this).serialize();
 	 $.ajax({
 			type: "POST",
-			url: "ajax/editar_usuario.php",
+			url: "../src/ajax/editar_usuario.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados_ajax2").html("Mensaje: Cargando...");
@@ -126,7 +126,7 @@ $( "#editar_password" ).submit(function( event ) {
  var parametros = $(this).serialize();
 	 $.ajax({
 			type: "POST",
-			url: "ajax/editar_password.php",
+			url: "../src/ajax/editar_password.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados_ajax3").html("Mensaje: Cargando...");
@@ -139,8 +139,8 @@ $( "#editar_password" ).submit(function( event ) {
 	});
   event.preventDefault();
 })
-	function get_user_id(id){
-		$("#user_id_mod").val(id);
+	function get_id_usuario(id){
+		$("#id_usuario_mod").val(id);
 	}
 
 	function obtener_datos(id){
@@ -150,10 +150,10 @@ $( "#editar_password" ).submit(function( event ) {
 			var email = $("#email"+id).val();
 			
 			$("#mod_id").val(id);
-			$("#firstname2").val(nombres);
-			$("#lastname2").val(apellidos);
-			$("#user_name2").val(usuario);
-			$("#user_email2").val(email);
+			$("#nombre2").val(nombres);
+			$("#apellido2").val(apellidos);
+			$("#nombre_usuarios2").val(usuario);
+			$("#correo2").val(email);
 			
 		}
 </script>

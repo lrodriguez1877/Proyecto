@@ -17,7 +17,7 @@
 
 	include("../src/templates/usuarios.php");
 
-    include("../src/templates/footer.php");
+	include("../src/templates/footer.php");
 
 
 ?>
@@ -32,7 +32,7 @@ $( "#guardar_usuario" ).submit(function( event ) {
  var parametros = $(this).serialize();
 	 $.ajax({
 			type: "POST",
-			url: "ajax/nuevo_usuario.php",
+			url: "../src/ajax/nuevo_usuario.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados_ajax").html("Mensaje: Cargando...");
@@ -52,7 +52,7 @@ $( "#editar_usuario" ).submit(function( event ) {
  var parametros = $(this).serialize();
 	 $.ajax({
 			type: "POST",
-			url: "ajax/editar_usuario.php",
+			url: "../src/ajax/editar_usuario.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados_ajax2").html("Mensaje: Cargando...");
@@ -72,7 +72,7 @@ $( "#editar_password" ).submit(function( event ) {
  var parametros = $(this).serialize();
 	 $.ajax({
 			type: "POST",
-			url: "ajax/editar_password.php",
+			url: "../src/ajax/editar_password.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados_ajax3").html("Mensaje: Cargando...");
@@ -85,8 +85,8 @@ $( "#editar_password" ).submit(function( event ) {
 	});
   event.preventDefault();
 })
-	function get_user_id(id){
-		$("#user_id_mod").val(id);
+	function get_id_usuario(id){
+		$("#id_usuario_mod").val(id);
 	}
 
 	function obtener_datos(id){
@@ -96,10 +96,10 @@ $( "#editar_password" ).submit(function( event ) {
 			var email = $("#email"+id).val();
 			
 			$("#mod_id").val(id);
-			$("#firstname2").val(nombres);
-			$("#lastname2").val(apellidos);
-			$("#user_name2").val(usuario);
-			$("#user_email2").val(email);
+			$("#nombre2").val(nombres);
+			$("#apellido2").val(apellidos);
+			$("#nombre_usuarios2").val(usuario);
+			$("#correo2").val(email);
 			
 		}
 </script>

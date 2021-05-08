@@ -11,22 +11,22 @@
 	include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
 	$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
 	if (isset($_GET['id'])){
-		$user_id=intval($_GET['id']);
-		$query=mysqli_query($con, "select * from users where user_id='".$user_id."'");
+		$id_usuario=intval($_GET['id']);
+		$query=mysqli_query($con, "select * from usuarios   where id_usuario='".$id_usuario."'");
 		$rw_user=mysqli_fetch_array($query);
-		$count=$rw_user['user_id'];
-		if ($user_id!=1){
-			if ($delete1=mysqli_query($con,"DELETE FROM users WHERE user_id='".$user_id."'")){
+		$count=$rw_user['id_usuario'];
+		if ($id_usuario!=1){
+			if ($delete1=mysqli_query($con,"DELETE FROM usuarios   WHERE id_usuario='".$id_usuario."'")){
 			?>
 			<div class="alert alert-success alert-dismissible" role="alert">
-			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			  <strong>Aviso!</strong> Datos eliminados exitosamente.
 			</div>
 			<?php 
 		}else {
 			?>
 			<div class="alert alert-danger alert-dismissible" role="alert">
-			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			  <strong>Error!</strong> Lo siento algo ha salido mal intenta nuevamente.
 			</div>
 			<?php
@@ -36,7 +36,7 @@
 		} else {
 			?>
 			<div class="alert alert-danger alert-dismissible" role="alert">
-			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			  <strong>Error!</strong> No se puede borrar el usuario administrador. 
 			</div>
 			<?php
@@ -48,8 +48,8 @@
 	if($action == 'ajax'){
 		// escaping, additionally removing everything that could be (html/javascript-) code
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-		 $aColumns = array('firstname', 'lastname');//Columnas de busqueda
-		 $sTable = "users";
+		 $aColumns = array('nombre', 'apellido');//Columnas de busqueda
+		 $sTable = "usuarios  ";
 		 $sWhere = "";
 		if ( $_GET['q'] != "" )
 		{
@@ -61,7 +61,7 @@
 			$sWhere = substr_replace( $sWhere, "", -3 );
 			$sWhere .= ')';
 		}
-		$sWhere.=" order by user_id desc";
+		$sWhere.=" order by id_usuario desc";
 		include 'pagination.php'; //include pagination file
 		//pagination variables
 		$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
@@ -94,30 +94,30 @@
 				</tr>
 				<?php
 				while ($row=mysqli_fetch_array($query)){
-						$user_id=$row['user_id'];
-						$fullname=$row['firstname']." ".$row["lastname"];
-						$user_name=$row['user_name'];
-						$user_email=$row['user_email'];
-						$date_added= date('d/m/Y', strtotime($row['date_added']));
+						$id_usuario=$row['id_usuario'];
+						$fullname=$row['nombre']." ".$row["apellido"];
+						$nombre_usuarios=$row['nombre_usuarios'];
+						$correo=$row['correo'];
+						$fecha= date('d/m/Y', strtotime($row['fecha']));
 						
 					?>
 					
-					<input type="hidden" value="<?php echo $row['firstname'];?>" id="nombres<?php echo $user_id;?>">
-					<input type="hidden" value="<?php echo $row['lastname'];?>" id="apellidos<?php echo $user_id;?>">
-					<input type="hidden" value="<?php echo $user_name;?>" id="usuario<?php echo $user_id;?>">
-					<input type="hidden" value="<?php echo $user_email;?>" id="email<?php echo $user_id;?>">
+					<input type="hidden" value="<?php echo $row['nombre'];?>" id="nombres<?php echo $id_usuario;?>">
+					<input type="hidden" value="<?php echo $row['apellido'];?>" id="apellidos<?php echo $id_usuario;?>">
+					<input type="hidden" value="<?php echo $nombre_usuarios;?>" id="usuario<?php echo $id_usuario;?>">
+					<input type="hidden" value="<?php echo $correo;?>" id="email<?php echo $id_usuario;?>">
 				
 					<tr>
-						<td><?php echo $user_id; ?></td>
+						<td><?php echo $id_usuario; ?></td>
 						<td><?php echo $fullname; ?></td>
-						<td ><?php echo $user_name; ?></td>
-						<td ><?php echo $user_email; ?></td>
-						<td><?php echo $date_added;?></td>
+						<td ><?php echo $nombre_usuarios; ?></td>
+						<td ><?php echo $correo; ?></td>
+						<td><?php echo $fecha;?></td>
 						
 					<td ><span class="pull-right">
-					<a href="#" class='btn btn-default' title='Editar usuario' onclick="obtener_datos('<?php echo $user_id;?>');" data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 
-					<a href="#" class='btn btn-default' title='Cambiar contraseña' onclick="get_user_id('<?php echo $user_id;?>');" data-toggle="modal" data-target="#myModal3"><i class="glyphicon glyphicon-cog"></i></a>
-					<a href="#" class='btn btn-default' title='Borrar usuario' onclick="eliminar('<? echo $user_id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
+					<a href="#" class='btn btn-default' title='Editar usuario' onclick="obtener_datos('<?php echo $id_usuario;?>');" data-bs-toggle="modal" data-bs-target="#myModal2"><i class="bi bi-edit"></i></a> 
+					<a href="#" class='btn btn-default' title='Cambiar contraseña' onclick="get_id_usuario('<?php echo $id_usuario;?>');" data-bs-toggle="modal" data-bs-target="#myModal3"><i class="bi bi-cog"></i></a>
+					<a href="#" class='btn btn-default' title='Borrar usuario' onclick="eliminar('<? echo $id_usuario; ?>')"><i class="bi bi-trash"></i> </a></span></td>
 						
 					</tr>
 					<?php

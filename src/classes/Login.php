@@ -63,13 +63,13 @@ class Login
             if (!$this->db_connection->connect_errno) {
 
                 // escape the POST stuff
-                $user_name = $this->db_connection->real_escape_string($_POST['nombre_usuario']);
+                $nombre_usuarios = $this->db_connection->real_escape_string($_POST['nombre_usuario']);
 
                 // consulta de la base de datos, obteniendo toda la información del usuario seleccionado (permite iniciar sesión a través de la dirección de correo electrónico en el
                 // campo de nombre de usuario)
                 $sql = "SELECT id_usuario, nombre_usuarios, nombre, correo, user_password_hash
                         FROM usuarios
-                        WHERE nombre_usuarios = '" . $user_name . "' OR correo = '" . $user_name . "';";
+                        WHERE nombre_usuarios = '" . $nombre_usuarios . "' OR correo = '" . $nombre_usuarios . "';";
                 $result_of_login_check = $this->db_connection->query($sql);
 
                 // Si este usuario existe

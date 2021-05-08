@@ -6,7 +6,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">×</button>
+        <button type="button" class="close" data-bs-dismiss="modal">×</button>
         <h4 class="modal-title">Agregar Stock</h4>
       </div>
       <div class="modal-body">
@@ -27,7 +27,7 @@
        
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cerrar</button>
 		<button type="submit" class="btn btn-primary">Guardar</button>
       </div>
     </div>

@@ -7,8 +7,10 @@
                         <h4><i class='bi bi-search'></i> Consultar inventario</h4>
                     </div>
                     <div class="col-md-3">
-                        <button type='button' class="btn btn-primary" data-bs-toggle="modal" data-target="#nuevoProducto"><span class="bi bi-plus" ></span> Agregar Nuevo Producto</button>
-                    </div>
+
+                        <button type='button' class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevoProducto"><span class="bi bi-plus" ></span> Agregar Nuevo Producto</button>
+
+					</div>
                 </div>
 			</div>
         </div>
@@ -16,7 +18,8 @@
 
 		    <?php
                 include("../src/modal/registro_productos.php");
-			    include("../src/modal/editar_productos.php");
+			    //include("../src/modal/editar_productos.php");
+				//include("../src/modal/modal_test.php")
 		    ?>
 			
 			<form class="form-horizontal" role="form" id="datos">

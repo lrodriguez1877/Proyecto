@@ -3,12 +3,13 @@
 		{
 	?>
 	<!-- Modal -->
+
 	<div class="modal" id="nuevoProducto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
 		<div class="modal-content">
 		  <div class="modal-header">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<h4 class="modal-title" id="myModalLabel"><i class='glyphicon glyphicon-edit'></i> Agregar nuevo producto</h4>
+			<h4 class="modal-title" id="myModalLabel"><i class='bi bi-edit'></i> Agregar nuevo producto</h4>
 		  </div>
 		  <div class="modal-body">
 			<form class="form-horizontal" method="post" id="guardar_producto" name="guardar_producto">
@@ -70,6 +71,26 @@
 		</div>
 	  </div>
 	</div>
+
+	<!--
+	<div class="modal fade" id="nuevoProducto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="nuevoProductoLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+-->
 	<?php
 		}
 	?>

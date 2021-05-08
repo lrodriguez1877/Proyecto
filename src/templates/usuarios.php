@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="card">
 		<div class="card-header">
-			<button type='button' class="btn btn-success" data-toggle="modal" data-target="#myModal"><span class="bi bi-plus" ></span> Nuevo Usuario</button>
+			<button type='button' class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal"><span class="bi bi-plus" ></span> Nuevo Usuario</button>
 			<h4><i class='bi bi-search'></i> Buscar Usuarios</h4>
 		</div>			
 		<div class="card-body">
@@ -18,7 +18,7 @@
 					</div>
 						<div class="col-md-3">
 							<button type="button" class="btn btn-default" onclick='load(1);'>
-								<span class="glyphicon glyphicon-search" ></span> Buscar</button>
+								<span class="bi bi-search" ></span> Buscar</button>
 							<span id="loader"></span>
 						</div>
 					</div>

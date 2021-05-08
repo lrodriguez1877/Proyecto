@@ -27,11 +27,11 @@
 		$quantity=intval($_POST['quantity']);
 		$reference=mysqli_real_escape_string($con,(strip_tags($_POST["reference"],ENT_QUOTES)));
 		$id_producto=intval($_GET['id']);
-		$user_id=$_SESSION['user_id'];
-		$firstname=$_SESSION['firstname'];
-		$nota="$firstname agregó $quantity producto(s) al inventario";
+		$id_usuario=$_SESSION['id_usuario'];
+		$nombre=$_SESSION['nombre'];
+		$nota="$nombre agregó $quantity producto(s) al inventario";
 		$fecha=date("Y-m-d H:i:s");
-		guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity);
+		guardar_historial($id_producto,$id_usuario,$fecha,$nota,$reference,$quantity);
 		$update=agregar_stock($id_producto,$quantity);
 		if ($update==1){
 			$message=1;
@@ -44,11 +44,11 @@
 		$quantity=intval($_POST['quantity_remove']);
 		$reference=mysqli_real_escape_string($con,(strip_tags($_POST["reference_remove"],ENT_QUOTES)));
 		$id_producto=intval($_GET['id']);
-		$user_id=$_SESSION['user_id'];
-		$firstname=$_SESSION['firstname'];
-		$nota="$firstname eliminó $quantity producto(s) del inventario";
+		$id_usuario=$_SESSION['id_usuario'];
+		$nombre=$_SESSION['nombre'];
+		$nota="$nombre eliminó $quantity producto(s) del inventario";
 		$fecha=date("Y-m-d H:i:s");
-		guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity);
+		guardar_historial($id_producto,$id_usuario,$fecha,$nota,$reference,$quantity);
 		$update=eliminar_stock($id_producto,$quantity);
 		if ($update==1){
 			$message=1;
@@ -91,7 +91,7 @@ $( "#editar_producto" ).submit(function( event ) {
  var parametros = $(this).serialize();
 	 $.ajax({
 			type: "POST",
-			url: "ajax/editar_producto.php",
+			url: "../src/ajax/editar_producto.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados_ajax2").html("Mensaje: Cargando...");

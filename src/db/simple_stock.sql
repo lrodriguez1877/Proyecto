@@ -32,14 +32,14 @@ CREATE TABLE IF NOT EXISTS `categorias` (
   `id_categoria` int(11) NOT NULL,
   `nombre_categoria` varchar(255) NOT NULL,
   `descripcion_categoria` varchar(255) NOT NULL,
-  `date_added` datetime NOT NULL
+  `fecha` datetime NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `categorias`
 --
 --
-INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `descripcion_categoria`, `date_added`) VALUES
+INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `descripcion_categoria`, `fecha`) VALUES
 (1, 'Repuestos', 'Equipos para el hogar', '2016-12-19 00:00:00'),
 (4, 'Equipos', 'Equipos stihl', '2016-12-19 21:06:37'),
 (5, 'Accesorios', 'Accesorios stihl', '2016-12-19 21:06:39');
@@ -53,7 +53,7 @@ INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `descripcion_categ
 CREATE TABLE IF NOT EXISTS `historial` (
   `id_historial` int(11) NOT NULL,
   `id_producto` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
   `fecha` datetime NOT NULL,
   `nota` varchar(255) NOT NULL,
   `referencia` varchar(100) NOT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `id_producto` int(11) NOT NULL,
   `codigo_producto` char(20) NOT NULL,
   `nombre_producto` char(255) NOT NULL,
-  `date_added` datetime NOT NULL,
+  `fecha` datetime NOT NULL,
   `precio_producto` double NOT NULL,
   `stock` int(11) NOT NULL,
   `id_categoria` int(11) NOT NULL
@@ -79,24 +79,24 @@ CREATE TABLE IF NOT EXISTS `products` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `users`
+-- Estructura de tabla para la tabla `usuarios  `
 --
 /*
-CREATE TABLE IF NOT EXISTS `users` (
-  `user_id` int(11) NOT NULL COMMENT 'auto incrementing user_id of each user, unique index',
-  `firstname` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `lastname` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `user_name` varchar(64) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s name, unique',
+CREATE TABLE IF NOT EXISTS `usuarios  ` (
+  `id_usuario` int(11) NOT NULL COMMENT 'auto incrementing id_usuario of each user, unique index',
+  `nombre` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `apellido` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre_usuarios` varchar(64) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s name, unique',
   `user_password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s password in salted and hashed format',
-  `user_email` varchar(64) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s email, unique',
-  `date_added` datetime NOT NULL
+  `correo` varchar(64) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s email, unique',
+  `fecha` datetime NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='user data';
 
 --
--- Volcado de datos para la tabla `users`
+-- Volcado de datos para la tabla `usuarios  `
 --
 
-INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `user_name`, `user_password_hash`, `user_email`, `date_added`) VALUES
+INSERT INTO `usuarios  ` (`id_usuario`, `nombre`, `apellido`, `nombre_usuarios`, `user_password_hash`, `correo`, `fecha`) VALUES
 (1, 'Obed', 'Alvarado', 'admin', '$2y$10$MPVHzZ2ZPOWmtUUGCq3RXu31OTB.jo7M9LZ7PmPQYmgETSNn19ejO', 'admin@admin.com', '2016-12-19 15:06:00');
 */
 --
@@ -124,13 +124,13 @@ ALTER TABLE `products`
   ADD UNIQUE KEY `codigo_producto` (`codigo_producto`);
 
 --
--- Indices de la tabla `users`
+-- Indices de la tabla `usuarios  `
 --
 /*
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `user_name` (`user_name`),
-  ADD UNIQUE KEY `user_email` (`user_email`);
+ALTER TABLE `usuarios  `
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD UNIQUE KEY `nombre_usuarios` (`nombre_usuarios`),
+  ADD UNIQUE KEY `correo` (`correo`);
 */
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -152,11 +152,11 @@ ALTER TABLE `historial`
 ALTER TABLE `products`
   MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `users`
+-- AUTO_INCREMENT de la tabla `usuarios  `
 --
 /*
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index',AUTO_INCREMENT=2;
+ALTER TABLE `usuarios  `
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing id_usuario of each user, unique index',AUTO_INCREMENT=2;
 */
 --
 -- Restricciones para tablas volcadas

@@ -26,17 +26,17 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		$stock=intval($_POST['stock']);
 		$id_categoria=intval($_POST['categoria']);
 		$precio_venta=floatval($_POST['precio']);
-		$date_added=date("Y-m-d H:i:s");
+		$fecha=date("Y-m-d H:i:s");
 		
-		$sql="INSERT INTO products (codigo_producto, nombre_producto, date_added, precio_producto, stock, id_categoria) VALUES ('$codigo','$nombre','$date_added','$precio_venta', '$stock','$id_categoria')";
+		$sql="INSERT INTO products (codigo_producto, nombre_producto, date_added, precio_producto, stock, id_categoria) VALUES ('$codigo','$nombre','$fecha','$precio_venta', '$stock','$id_categoria')";
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){
 				$messages[] = "Producto ha sido ingresado satisfactoriamente.";
 				$id_producto=get_row('products','id_producto', 'codigo_producto', $codigo);
-				$user_id=$_SESSION['user_id'];
-				$firstname=$_SESSION['firstname'];
-				$nota="$firstname agregó $stock producto(s) al inventario";
-				echo guardar_historial($id_producto,$user_id,$date_added,$nota,$codigo,$stock);
+				$id_usuario=$_SESSION['id_usuario'];
+				$nombre=$_SESSION['nombre'];
+				$nota="$nombre agregó $stock producto(s) al inventario";
+				echo guardar_historial($id_producto,$id_usuario,$fecha,$nota,$codigo,$stock);
 				
 			} else{
 				$errors []= "Lo siento algo ha salido mal intenta nuevamente.".mysqli_error($con);
@@ -49,7 +49,7 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 			
 			?>
 			<div class="alert alert-danger" role="alert">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<button type="button" class="close" data-bs-dismiss="alert">&times;</button>
 					<strong>Error!</strong> 
 					<?php
 						foreach ($errors as $error) {
@@ -63,7 +63,7 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 				
 				?>
 				<div class="alert alert-success" role="alert">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<button type="button" class="close" data-bs-dismiss="alert">&times;</button>
 						<strong>¡Bien hecho!</strong>
 						<?php
 							foreach ($messages as $message) {

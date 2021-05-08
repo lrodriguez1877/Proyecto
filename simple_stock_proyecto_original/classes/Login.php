@@ -45,11 +45,11 @@ class Login
     private function dologinWithPostData()
     {
         // check login form contents
-        if (empty($_POST['user_name'])) {
+        if (empty($_POST['nombre_usuarios'])) {
             $this->errors[] = "Username field was empty.";
         } elseif (empty($_POST['user_password'])) {
             $this->errors[] = "Password field was empty.";
-        } elseif (!empty($_POST['user_name']) && !empty($_POST['user_password'])) {
+        } elseif (!empty($_POST['nombre_usuarios']) && !empty($_POST['user_password'])) {
 
             // create a database connection, using the constants from config/db.php (which we loaded in index.php)
             $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -63,13 +63,13 @@ class Login
             if (!$this->db_connection->connect_errno) {
 
                 // escape the POST stuff
-                $user_name = $this->db_connection->real_escape_string($_POST['user_name']);
+                $nombre_usuarios = $this->db_connection->real_escape_string($_POST['nombre_usuarios']);
 
                 // database query, getting all the info of the selected user (allows login via email address in the
                 // username field)
-                $sql = "SELECT user_id, user_name, firstname, user_email, user_password_hash
-                        FROM users
-                        WHERE user_name = '" . $user_name . "' OR user_email = '" . $user_name . "';";
+                $sql = "SELECT id_usuario, nombre_usuarios, nombre, correo, user_password_hash
+                        FROM usuarios  
+                        WHERE nombre_usuarios = '" . $nombre_usuarios . "' OR correo = '" . $nombre_usuarios . "';";
                 $result_of_login_check = $this->db_connection->query($sql);
 
                 // if this user exists
@@ -83,10 +83,10 @@ class Login
                     if (password_verify($_POST['user_password'], $result_row->user_password_hash)) {
 
                         // write user data into PHP SESSION (a file on your server)
-                        $_SESSION['user_id'] = $result_row->user_id;
-						$_SESSION['firstname'] = $result_row->firstname;
-						$_SESSION['user_name'] = $result_row->user_name;
-                        $_SESSION['user_email'] = $result_row->user_email;
+                        $_SESSION['id_usuario'] = $result_row->id_usuario;
+						$_SESSION['nombre'] = $result_row->nombre;
+						$_SESSION['nombre_usuarios'] = $result_row->nombre_usuarios;
+                        $_SESSION['correo'] = $result_row->correo;
                         $_SESSION['user_login_status'] = 1;
 
                     } else {

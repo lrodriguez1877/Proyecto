@@ -29,7 +29,7 @@ USE `proyecto2`;
 --
 
 CREATE TABLE IF NOT EXISTS `usuarios` (
-  `id_usuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index',
+  `id_usuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing id_usuario of each user, unique index',
   `nombre` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `apellido` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `nombre_usuarios` varchar(64) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s name, unique',

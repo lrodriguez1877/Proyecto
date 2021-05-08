@@ -8,14 +8,14 @@ if (version_compare(PHP_VERSION, '5.3.7', '<')) {
     // (this library adds the PHP 5.5 password hashing functions to older versions of PHP)
     require_once("../libraries/password_compatibility_library.php");
 }		
-		if (empty($_POST['user_id_mod'])){
+		if (empty($_POST['id_usuario_mod'])){
 			$errors[] = "ID vacío";
 		}  elseif (empty($_POST['user_password_new3']) || empty($_POST['user_password_repeat3'])) {
             $errors[] = "Contraseña vacía";
         } elseif ($_POST['user_password_new3'] !== $_POST['user_password_repeat3']) {
             $errors[] = "la contraseña y la repetición de la contraseña no son lo mismo";
         }  elseif (
-			 !empty($_POST['user_id_mod'])
+			 !empty($_POST['id_usuario_mod'])
 			&& !empty($_POST['user_password_new3'])
             && !empty($_POST['user_password_repeat3'])
             && ($_POST['user_password_new3'] === $_POST['user_password_repeat3'])
@@ -23,7 +23,7 @@ if (version_compare(PHP_VERSION, '5.3.7', '<')) {
             require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 			require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
 			
-				$user_id=intval($_POST['user_id_mod']);
+				$id_usuario=intval($_POST['id_usuario_mod']);
 				$user_password = $_POST['user_password_new3'];
 				
                 // crypt the user's password with PHP 5.5's password_hash() function, results in a 60 character
@@ -33,7 +33,7 @@ if (version_compare(PHP_VERSION, '5.3.7', '<')) {
 					
                
 					// write new user's data into database
-                    $sql = "UPDATE users SET user_password_hash='".$user_password_hash."' WHERE user_id='".$user_id."'";
+                    $sql = "UPDATE usuarios   SET user_password_hash='".$user_password_hash."' WHERE id_usuario='".$id_usuario."'";
                     $query = mysqli_query($con,$sql);
 
                     // if user has been added successfully
@@ -52,7 +52,7 @@ if (version_compare(PHP_VERSION, '5.3.7', '<')) {
 			
 			?>
 			<div class="alert alert-danger" role="alert">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<button type="button" class="close" data-bs-dismiss="alert">&times;</button>
 					<strong>Error!</strong> 
 					<?php
 						foreach ($errors as $error) {
@@ -66,7 +66,7 @@ if (version_compare(PHP_VERSION, '5.3.7', '<')) {
 				
 				?>
 				<div class="alert alert-success" role="alert">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<button type="button" class="close" data-bs-dismiss="alert">&times;</button>
 						<strong>¡Bien hecho!</strong>
 						<?php
 							foreach ($messages as $message) {

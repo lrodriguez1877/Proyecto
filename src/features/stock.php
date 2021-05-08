@@ -24,7 +24,7 @@
 
     include("../src/templates/stock.php");
 
-    include("../src/templates/footer.php");
+	include("../src/templates/footer.php");
 
 ?>
 </html>
