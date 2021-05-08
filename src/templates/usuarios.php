@@ -6,9 +6,9 @@
 		</div>			
 		<div class="card-body">
 			<?php
-			include("../modal/registro_usuarios.php");
-			include("../modal/editar_usuarios.php");
-			include("../modal/cambiar_password.php");
+			include("../src/modal/registro_usuarios.php");
+			include("../src/modal/editar_usuarios.php");
+			include("../src/modal/cambiar_password.php");
 			?>
 			<form class="form-horizontal" role="form" id="datos_cotizacion">
     			<div class="form-group row">

@@ -6,7 +6,7 @@
             <form method="post" accept-charset="utf-8" action="login.php" name="loginform" autocomplete="off" role="form" class="form-signin">
             <?php
                 //busca errores en el login
-                include("../login_errors.php");
+                include("../src/login_errors.php");
             ?>
             
                 <span id="reauth-email" class="reauth-email"></span>
