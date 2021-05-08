@@ -15,6 +15,7 @@
       <a class="navbar-brand" href="#">Simple Stock</a>
     </div>
 
+
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -28,6 +29,9 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
+</nav>
+<nav class="navbar navbarlight">
+
 </nav>
 	<?php
 		}
