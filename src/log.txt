@@ -1,0 +1,10 @@
+buscar_usuario activadobuscar_usuario activadobuscar_usuario activado
+buscar_usuario activado
+../config/db.php
+buscar_usuario activado
+../config/db.php
+buscar_usuario activado
+buscar_usuario activado
+buscar_usuario activado
+coneccion hecha
+ajax

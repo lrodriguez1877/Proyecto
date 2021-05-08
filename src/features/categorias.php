@@ -29,8 +29,8 @@
 			
 			
 			<?php
-				include("modal/registro_categorias.php");
-				include("modal/editar_categorias.php");
+				include("../src/modal/registro_categorias.php");
+				include("../src/modal/editar_categorias.php");
 			?>
 			<form class="form-horizontal" role="form" id="datos_cotizacion">
 				
@@ -66,3 +66,4 @@
 <?php  include("../src/templates/footer.php");
 
 ?>
+<script type="text/javascript" src="js/categorias.js"></script>

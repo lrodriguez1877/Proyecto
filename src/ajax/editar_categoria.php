@@ -1,5 +1,5 @@
 <?php
-	include('../src/ajax/is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
+	include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
 	/*Inicia validacion del lado del servidor*/
 	if (empty($_POST['mod_id'])) {
            $errors[] = "ID vacío";
@@ -10,8 +10,8 @@
 			!empty($_POST['mod_nombre'])
 		){
 		/* Connect To Database*/
-		require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
-		require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
+		require_once ("../../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
+		require_once ("../../config/conexion.php");//Contiene funcion que conecta a la base de datos
 		// escaping, additionally removing everything that could be (html/javascript-) code
 		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"],ENT_QUOTES)));
 		$descripcion=mysqli_real_escape_string($con,(strip_tags($_POST["mod_descripcion"],ENT_QUOTES)));

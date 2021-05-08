@@ -29,6 +29,7 @@
 	include("../src/templates/footer.php");
 
 ?>
+<script type="text/javascript" src="js/productos.js"></script>
 </html>
 <script>
 function eliminar (id){

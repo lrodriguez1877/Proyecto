@@ -33,8 +33,8 @@
 			
 			
 			<?php
-			include("modal/registro_productos.php");
-			include("modal/editar_productos.php");
+			include("../src/modal/registro_productos.php");
+			include("../src/modal/editar_productos.php");
 			?>
 			<form class="form-horizontal" role="form" id="datos">
 				
@@ -86,7 +86,7 @@
 	<?php
 	include("footer.php");
 	?>
-	<script type="text/javascript" src="js/productos.js"></script>
+	<script type="text/javascript" src="../public/js/productos.js"></script>
   </body>
 </html>
 <script>

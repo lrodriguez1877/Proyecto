@@ -1,0 +1,55 @@
+buscar_usuario activado
+coneccion hecha
+ajaxlinea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+nuevo usuario iniciado linea 2
+SELECT * FROM usuarios   WHERE nombre_usuarios = 'jose' OR correo = 'jose@jose.com'; linea 65
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+nueva categoria iniciado linea 2
+INSERT INTO categorias (nombre_categoria, descripcion_categoria, fecha) VALUES ('otras categorias','otras categorias','2021-05-08 23:26:56') linea 2
+buscar_usuario activado
+coneccion hecha
+ajax linea 8

@@ -1,12 +1,15 @@
 <?php
-
-	require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
-	require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
-	include('../src/ajax/is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
+	file_put_contents("../../log.txt","buscar_usuario activado"."\n",FILE_APPEND);
+	require_once ("../../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
+	require_once ("../../config/conexion.php");//Contiene funcion que conecta a la base de datos
+	file_put_contents("../../log.txt","coneccion hecha"."\n",FILE_APPEND);
+	include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
 	$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
+	file_put_contents("../../log.txt",$action." linea 8"."\n",FILE_APPEND);
 	if (isset($_GET['id'])){
 		$id_usuario=intval($_GET['id']);
 		$query=mysqli_query($con, "select * from usuarios   where id_usuario='".$id_usuario."'");
+		file_put_contents("../../log.txt",$quer." linea 12"."\n",FILE_APPEND);
 		$rw_user=mysqli_fetch_array($query);
 		$count=$rw_user['id_usuario'];
 		if ($id_usuario!=1){
@@ -65,7 +68,7 @@
 		$row= mysqli_fetch_array($count_query);
 		$numrows = $row['numrows'];
 		$total_pages = ceil($numrows/$per_page);
-		$reload = '../public/usuarios.php';
+		$reload = '../../public/usuarios.php';
 		//main query to fetch the data
 		$sql="SELECT * FROM  $sTable $sWhere LIMIT $offset,$per_page";
 		$query = mysqli_query($con, $sql);

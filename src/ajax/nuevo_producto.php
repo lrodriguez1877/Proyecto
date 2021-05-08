@@ -1,5 +1,5 @@
 <?php
-include('../src/ajax/is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
+include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
 		
 	/*Inicia validacion del lado del servidor*/
 	if (empty($_POST['codigo'])) {
@@ -17,9 +17,9 @@ include('../src/ajax/is_logged.php');//Archivo verifica que el usario que intent
 			!empty($_POST['precio'])
 		){
 		/* Connect To Database*/
-		require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
-		require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
-		include("../src/funciones.php");
+		require_once ("../../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
+		require_once ("../../config/conexion.php");//Contiene funcion que conecta a la base de datos
+		include("../funciones.php");
 		// escaping, additionally removing everything that could be (html/javascript-) code
 		$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["codigo"],ENT_QUOTES)));
 		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
@@ -28,7 +28,7 @@ include('../src/ajax/is_logged.php');//Archivo verifica que el usario que intent
 		$precio_venta=floatval($_POST['precio']);
 		$fecha=date("Y-m-d H:i:s");
 		
-		$sql="INSERT INTO products (codigo_producto, nombre_producto, date_added, precio_producto, stock, id_categoria) VALUES ('$codigo','$nombre','$fecha','$precio_venta', '$stock','$id_categoria')";
+		$sql="INSERT INTO products (codigo_producto, nombre_producto, fecha, precio_producto, stock, id_categoria) VALUES ('$codigo','$nombre','$fecha','$precio_venta', '$stock','$id_categoria')";
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){
 				$messages[] = "Producto ha sido ingresado satisfactoriamente.";

@@ -78,14 +78,11 @@
 	include("../src/modal/editar_productos.php");
 
 	include("../src/templates/productos.php");
-?>	
-	<script type="text/javascript" src="js/productos.js"></script>
-<?php
-
 
 	include("../src/templates/footer.php");
-
+	
 ?>
+<script type="text/javascript" src="js/productos.js"></script>
 <script>
 $( "#editar_producto" ).submit(function( event ) {
   $('#actualizar_datos').attr("disabled", true);
