@@ -6,6 +6,8 @@
 
     //verificar si no esta iniciada la sesion
     //si no esta iniciada la sesion enviar a login.php
+	ob_start(); // hace un buffer del contenido para poder hacer multiples redirecciones con header en produccion
+
     session_start();
 	if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
         header("location: login.php");

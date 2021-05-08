@@ -2,6 +2,8 @@
     //verificar que exista la version minima de php
     //probablemente tomado de una version antigua de https://github.com/panique/huge
     //seria mejor utilizar un framework moderno y robusto que siga las normas de seguridad
+    ob_start(); // hace un buffer del contenido para poder hacer multiples redirecciones con header en produccion
+
     if (version_compare(PHP_VERSION, '5.3.7', '<')) {
         exit("Sorry, Simple PHP Login does not run on a PHP version smaller than 5.3.7 !");
     } else if (version_compare(PHP_VERSION, '5.5.0', '<')) {
