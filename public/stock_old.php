@@ -1,8 +1,9 @@
 <?php
-    /*--------------------------------------------
-    Autor: Grupo 5 Componentes web UMH 02-2021
-    integrantes:
-    ---------------------------------------------*/
+	/*-------------------------
+	Autor: Obed Alvarado
+	Web: obedalvarado.pw
+	Mail: info@obedalvarado.pw
+	---------------------------*/
 	session_start();
 	if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
         header("location: login.php");
@@ -23,7 +24,7 @@
 	<div class="panel panel-success">
 		<div class="panel-heading">
 		    <div class="btn-group pull-right">
-				<button type='button' class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevoProducto"><span class="bi bi-plus" ></span> Agregar</button>
+				<button type='button' class="btn btn-success" data-bs-toggle="modal" data-bs-target="#nuevoProducto"><span class="bi bi-plus" ></span> Agregar</button>
 			</div>
 			<h4><i class='bi bi-search'></i> Consultar inventario</h4>
 		</div>
