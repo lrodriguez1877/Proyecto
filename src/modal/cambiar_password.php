@@ -1,4 +1,4 @@
-	<?php
+<?php
 		if (isset($con))
 		{
 	?>
@@ -7,8 +7,8 @@
 	  <div class="modal-dialog" role="document">
 		<div class="modal-content">
 		  <div class="modal-header">
-			<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<h4 class="modal-title" id="myModalLabel"><i class='bi bi-edit'></i> Cambiar contraseña</h4>
+		  <h5 class="modal-title" id="myModalLabel">Cambiar contraseña</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		  </div>
 		  <div class="modal-body">
 			<form class="form-horizontal" method="post" id="editar_password" name="editar_password">
@@ -17,28 +17,20 @@
 			 
 			 
 			 
-			  <div class="form-group">
-				<label for="user_password_new3" class="col-sm-4 control-label">Nueva contraseña</label>
-				<div class="col-sm-8">
+			  <div class="form-floating mb-3">
 				  <input type="password" class="form-control" id="user_password_new3" name="user_password_new3" placeholder="Nueva contraseña" pattern=".{6,}" title="Contraseña ( min . 6 caracteres)" required>
+				  <label for="user_password_new3">Nueva contraseña</label>
 					<input type="hidden" id="id_usuario_mod" name="id_usuario_mod">
-				</div>
 			  </div>
-			  <div class="form-group">
-				<label for="user_password_repeat3" class="col-sm-4 control-label">Repite contraseña</label>
-				<div class="col-sm-8">
+			  <div class="form-floating mb-3">
 				  <input type="password" class="form-control" id="user_password_repeat3" name="user_password_repeat3" placeholder="Repite contraseña" pattern=".{6,}" required>
-				</div>
-			  </div>
-			 
-			  
-
-			 
+				  <label for="user_password_repeat3">Repite contraseña</label>
+			  </div>			 
 			 
 			
 		  </div>
 		  <div class="modal-footer">
-			<button type="button" class="btn btn-default" data-bs-dismiss="modal">Cerrar</button>
+			<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
 			<button type="submit" class="btn btn-primary" id="actualizar_datos3">Cambiar contraseña</button>
 		  </div>
 		  </form>

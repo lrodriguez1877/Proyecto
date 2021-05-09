@@ -104,7 +104,7 @@
 						<td><?php echo $fecha;?></td>
 						
 					<td class='text-right'>
-						<a href="#" class='btn btn-default' title='Editar categoría' data-nombre='<?php echo $nombre_categoria;?>' data-descripcion='<?php echo $descripcion_categoria?>' data-id='<?php echo $id_categoria;?>' data-bs-toggle="modal" data-bs-target="#myModal2"><i class="bi bi-edit"></i></a> 
+						<a href="#" class='btn btn-default' title='Editar categoría' data-nombre='<?php echo $nombre_categoria;?>' data-descripcion='<?php echo $descripcion_categoria?>' data-id='<?php echo $id_categoria;?>' data-bs-toggle="modal" data-bs-target="#myModal2"><i class="bi bi-person-badge-fill"></i></a> 
 						<a href="#" class='btn btn-default' title='Borrar categoría' onclick="eliminar('<?php echo $id_categoria; ?>')"><i class="bi bi-trash"></i> </a>
 					</td>
 						
