@@ -1,3 +1,3 @@
 <?php
-    include("../src/features/product.php")
+    include("../src/features/producto.php")
 ?>

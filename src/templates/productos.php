@@ -39,10 +39,10 @@
                     <div class="col-sm-12 margin-btm-10">
 					</div>
                     <div class="col-sm-6 col-xs-6 col-md-4 ">
-                      <a href="" data-bs-toggle="modal" data-bs-target="#add-stock"><img width="100px"  src="img/stock-in.png"></a>
+                      <a href="" data-bs-toggle="modal" data-bs-target="#add-stock"><img width="100px"  src="asset/img/stock-in.png"></a>
                     </div>
                     <div class="col-sm-6 col-xs-6 col-md-4">
-                      <a href="" data-bs-toggle="modal" data-bs-target="#remove-stock"><img width="100px"  src="img/stock-out.png"></a>
+                      <a href="" data-bs-toggle="modal" data-bs-target="#remove-stock"><img width="100px"  src="asset/img/stock-out.png"></a>
                     </div>
                     <div class="col-sm-12 margin-btm-10">
                     </div>
