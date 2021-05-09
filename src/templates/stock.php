@@ -1,12 +1,16 @@
 <div class="container">
 	<div class="card">
         <div class="card-header">
-			<div class="row">
-				<div class="col-md-4">
-					<button type='button' class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevoProducto"><span class="bi bi-plus" ></span> Nuevo Producto</button>
-				</div>
-				<div class="col-md-8">
-					<h4><i class='bi bi-search'></i> Consultar inventario</h4>
+            <div class="btn-group pull-right">
+                <div class="justify-content-md-center">
+                    <div class="col-md-9">
+                        <h4><i class='bi bi-search'></i> Consultar inventario</h4>
+                    </div>
+                    <div class="col-md-3">
+
+                        <button type='button' class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevoProducto"><span class="bi bi-plus" ></span> Agregar Nuevo Producto</button>
+
+					</div>
                 </div>
 			</div>
         </div>

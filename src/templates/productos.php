@@ -6,7 +6,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-sm-4 col-sm-offset-2 text-center">
-				 <img class="item-img img-flex" src="img/stock.png" alt=""> 
+				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="bi bi-trash"></i> Eliminar </a> 
 					<a href="#myModal2" data-bs-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="bi bi-pencil"></i> Editar </a>	
@@ -39,10 +39,10 @@
                     <div class="col-sm-12 margin-btm-10">
 					</div>
                     <div class="col-sm-6 col-xs-6 col-md-4 ">
-                      <a href="" data-bs-toggle="modal" data-bs-target="#add-stock"><img width="100px"  src="asset/img/stock-in.png"></a>
+                      <a href="" data-bs-toggle="modal" data-bs-target="#add-stock"><img width="100px"  src="img/stock-in.png"></a>
                     </div>
                     <div class="col-sm-6 col-xs-6 col-md-4">
-                      <a href="" data-bs-toggle="modal" data-bs-target="#remove-stock"><img width="100px"  src="asset/img/stock-out.png"></a>
+                      <a href="" data-bs-toggle="modal" data-bs-target="#remove-stock"><img width="100px"  src="img/stock-out.png"></a>
                     </div>
                     <div class="col-sm-12 margin-btm-10">
                     </div>
