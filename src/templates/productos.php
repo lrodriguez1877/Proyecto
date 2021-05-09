@@ -6,7 +6,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-sm-4 col-sm-offset-2 text-center">
-				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
+				 <img class="item-img img-flex" src="img/stock.png" alt=""> 
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="bi bi-trash"></i> Eliminar </a> 
 					<a href="#myModal2" data-bs-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="bi bi-pencil"></i> Editar </a>	

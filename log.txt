@@ -53,3 +53,71 @@ INSERT INTO categorias (nombre_categoria, descripcion_categoria, fecha) VALUES (
 buscar_usuario activado
 coneccion hecha
 ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8

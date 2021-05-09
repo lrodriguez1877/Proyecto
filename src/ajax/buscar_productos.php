@@ -1,10 +1,9 @@
 <?php
 
-	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
-	---------------------------*/
+    /*--------------------------------------------
+    Autor: Grupo 5 Componentes web UMH 02-2021
+    integrantes:
+    ---------------------------------------------*/
 	include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
 	/* Connect To Database*/
 	require_once ("../../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos

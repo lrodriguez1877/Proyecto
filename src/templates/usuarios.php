@@ -1,14 +1,20 @@
 <div class="container">
 	<div class="card">
 		<div class="card-header">
-			<button type='button' class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal"><span class="bi bi-plus" ></span> Nuevo Usuario</button>
-			<h4><i class='bi bi-search'></i> Buscar Usuarios</h4>
+			<div class="row">
+				<div class="col-md-4">
+					<button type='button' class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><span class="bi bi-plus" ></span> Nuevo Usuario</button>
+				</div>
+				<div class="col-md-8">
+					<h4><i class='bi bi-search'></i> Buscar Usuarios</h4>
+				</div>
+			</div>
 		</div>			
 		<div class="card-body">
 			<?php
-			include("../src/modal/registro_usuarios.php");
-			include("../src/modal/editar_usuarios.php");
-			include("../src/modal/cambiar_password.php");
+				include("../src/modal/registro_usuarios.php");
+				include("../src/modal/editar_usuarios.php");
+				include("../src/modal/cambiar_password.php");
 			?>
 			<form class="form-horizontal" role="form" id="datos_cotizacion">
     			<div class="form-group row">
