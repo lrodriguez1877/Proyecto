@@ -7,27 +7,23 @@
 	  <div class="modal-dialog" role="document">
 		<div class="modal-content">
 		  <div class="modal-header">
-			<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<h4 class="modal-title" id="myModalLabel"><i class='bi bi-edit'></i> Editar categoría</h4>
+		  <h5 class="modal-title" id="myModalLabel">Editar Categoria</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		  </div>
 		  <div class="modal-body">
 			<form class="form-horizontal" method="post" id="editar_categoria" name="editar_categoria">
 			<div id="resultados_ajax2"></div>
-			  <div class="form-group">
-				<label for="mod_nombre" class="col-sm-3 control-label">Nombre</label>
-				<div class="col-sm-8">
+			  <div class="form-floating mb-3">
 				  <input type="text" class="form-control" id="mod_nombre" name="mod_nombre"  required>
+				  <label for="mod_nombre">Nombre</label>
 					<input type="hidden" name="mod_id" id="mod_id">
-				</div>
 			  </div>
 			   
 			  
 			 
-			  <div class="form-group">
-				<label for="mod_descripcion" class="col-sm-3 control-label">Descripción</label>
-				<div class="col-sm-8">
+			  <div class="form-floating mb-3">
 				  <textarea class="form-control" id="mod_descripcion" name="mod_descripcion" ></textarea>
-				</div>
+				  <label for="mod_descripcion">Descripción</label>
 			  </div>
 			  
 			 
@@ -37,7 +33,7 @@
 			
 		  </div>
 		  <div class="modal-footer">
-			<button type="button" class="btn btn-default" data-bs-dismiss="modal">Cerrar</button>
+			<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
 			<button type="submit" class="btn btn-primary" id="actualizar_datos">Actualizar datos</button>
 		  </div>
 		  </form>

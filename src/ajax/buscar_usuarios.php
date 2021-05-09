@@ -110,8 +110,8 @@
 						<td><?php echo $fecha;?></td>
 						
 					<td ><span class="pull-right">
-					<a href="#" class='btn btn-default' title='Editar usuario' onclick="obtener_datos('<?php echo $id_usuario;?>');" data-bs-toggle="modal" data-bs-target="#myModal2"><i class="bi bi-edit"></i></a> 
-					<a href="#" class='btn btn-default' title='Cambiar contraseña' onclick="get_id_usuario('<?php echo $id_usuario;?>');" data-bs-toggle="modal" data-bs-target="#myModal3"><i class="bi bi-cog"></i></a>
+					<a href="#" class='btn btn-default' title='Editar usuario' onclick="obtener_datos('<?php echo $id_usuario;?>');" data-bs-toggle="modal" data-bs-target="#myModal2"><i class="bi bi-person-badge-fill"></i></a> 
+					<a href="#" class='btn btn-default' title='Cambiar contraseña' onclick="get_id_usuario('<?php echo $id_usuario;?>');" data-bs-toggle="modal" data-bs-target="#myModal3"><i class="bi bi-file-lock-fill"></i></a>
 					<a href="#" class='btn btn-default' title='Borrar usuario' onclick="eliminar('<? echo $id_usuario; ?>')"><i class="bi bi-trash"></i> </a></span></td>
 						
 					</tr>
