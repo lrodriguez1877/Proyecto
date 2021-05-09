@@ -12,7 +12,7 @@
                 <span id="reauth-email" class="reauth-email"></span>
                 <input class="form-control" placeholder="Usuario" name="nombre_usuario" type="text" value="" autofocus="" required>
                 <input class="form-control" placeholder="Contraseña" name="password" type="password" value="" autocomplete="off" required>
-                <button type="submit" class="btn btn-lg btn-success btn-block btn-signin" name="login" id="submit">Iniciar Sesión</button>
+                <button type="submit" class="btn btn-lg btn-primary btn-block btn-signin" name="login" id="submit">Iniciar Sesión</button>
             </form>
         </div>
     </div>

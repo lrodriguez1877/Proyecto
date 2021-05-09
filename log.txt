@@ -53,3 +53,214 @@ INSERT INTO categorias (nombre_categoria, descripcion_categoria, fecha) VALUES (
 buscar_usuario activado
 coneccion hecha
 ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+nueva categoria iniciado linea 2
+INSERT INTO categorias (nombre_categoria, descripcion_categoria, fecha) VALUES ('Prueba','Nada','2021-05-09 06:34:04') linea 2
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
+buscar_usuario activado
+coneccion hecha
+ajax linea 8
